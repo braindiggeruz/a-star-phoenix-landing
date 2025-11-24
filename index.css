@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #05080F;
+  --color-bg-alt: #0A0F1C;
+  --color-primary: #F59E0B;
+  --color-primary-glow: rgba(245, 158, 11, 0.4);
+  --color-text: #F3F4F6;
+  --color-text-muted: #9CA3AF;
+  --color-border: rgba(255, 255, 255, 0.08);
+  
+  --font-body: 'Inter', sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-[#05080F] text-gray-100 font-sans antialiased selection:bg-amber-500/30;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight text-white;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center rounded-full font-medium transition-all duration-300 cursor-pointer active:scale-95;
+  }
+
+  .btn-primary {
+    @apply bg-white text-black hover:bg-gray-100 shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] px-8 py-4 text-lg font-semibold;
+  }
+  
+  .btn-accent {
+    @apply bg-amber-500 text-black hover:bg-amber-400 shadow-[0_0_20px_rgba(245,158,11,0.3)] hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] px-8 py-4 text-lg font-semibold;
+  }
+
+  .btn-glass {
+    @apply bg-white/5 border border-white/10 text-white hover:bg-white/10 backdrop-blur-md px-6 py-3;
+  }
+
+  .glass-panel {
+    @apply bg-[#0A0F1C]/60 backdrop-blur-xl border border-white/[0.08] rounded-2xl shadow-2xl;
+  }
+  
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-amber-200 via-amber-400 to-amber-600;
+  }
+}
